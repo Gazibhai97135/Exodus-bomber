@@ -1487,7 +1487,8 @@ def admin_login():
     threading.Timer(86400, lambda: admin_tokens.discard(token)).start()
     return jsonify({"token": token})
 
-@app.route("/admin/api/stats"); @require_auth
+@app.route('/admin/api/stats')
+@require_auth
 def admin_stats():
     users = fb_users_all()
     keys  = fb_all_keys(5000)
