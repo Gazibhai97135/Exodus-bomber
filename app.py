@@ -1469,8 +1469,10 @@ def home():
     return render_template_string(h)
 
 # ─── Admin routes ────────────────────────────────────────────────
-@app.route("/admin"); @app.route("/admin/")
-def admin_index(): return render_template_string(ADMIN_HTML)
+@app.route('/admin')
+@app.route('/admin/')
+def admin_index(): 
+    return render_template_string(ADMIN_HTML)
 
 @app.route("/admin/login")
 def admin_login_page(): return render_template_string(ADMIN_HTML)
